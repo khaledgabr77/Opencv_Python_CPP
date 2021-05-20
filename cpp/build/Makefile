@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named image
+
+# Build rule for target.
+image: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image
+.PHONY : image
+
+# fast build rule for target.
+image/fast:
+	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/build
+.PHONY : image/fast
+
+#=============================================================================
 # Target rules for targets named DisplayImage
 
 # Build rule for target.
@@ -122,6 +135,33 @@ DisplayImage: cmake_check_build_system
 DisplayImage/fast:
 	$(MAKE) -f CMakeFiles/DisplayImage.dir/build.make CMakeFiles/DisplayImage.dir/build
 .PHONY : DisplayImage/fast
+
+imae.o: imae.cpp.o
+
+.PHONY : imae.o
+
+# target to build an object file
+imae.cpp.o:
+	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/imae.cpp.o
+.PHONY : imae.cpp.o
+
+imae.i: imae.cpp.i
+
+.PHONY : imae.i
+
+# target to preprocess a source file
+imae.cpp.i:
+	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/imae.cpp.i
+.PHONY : imae.cpp.i
+
+imae.s: imae.cpp.s
+
+.PHONY : imae.s
+
+# target to generate assembly for a file
+imae.cpp.s:
+	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/imae.cpp.s
+.PHONY : imae.cpp.s
 
 window.o: window.cpp.o
 
@@ -158,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... image"
 	@echo "... DisplayImage"
+	@echo "... imae.o"
+	@echo "... imae.i"
+	@echo "... imae.s"
 	@echo "... window.o"
 	@echo "... window.i"
 	@echo "... window.s"

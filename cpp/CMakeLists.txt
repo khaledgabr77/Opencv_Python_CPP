@@ -4,3 +4,6 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( DisplayImage window.cpp )
 target_link_libraries( DisplayImage ${OpenCV_LIBS} )
+
+add_executable( image imae.cpp )
+target_link_libraries( image ${OpenCV_LIBS} )

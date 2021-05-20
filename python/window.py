@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import cv2 as cv
 import sys
-
+import numpy as np 
 
 
 
@@ -15,3 +15,5 @@ if k == ord("s"):
     cv.imwrite("original (10).png", img)
 cv.destroyWindow("window")
 
+out = np.hstack(img)
+print(out)
