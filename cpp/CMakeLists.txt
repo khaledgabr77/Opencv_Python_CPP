@@ -7,3 +7,6 @@ target_link_libraries( DisplayImage ${OpenCV_LIBS} )
 
 add_executable( image imae.cpp )
 target_link_libraries( image ${OpenCV_LIBS} )
+
+add_executable( video video.cpp )
+target_link_libraries( video ${OpenCV_LIBS} )

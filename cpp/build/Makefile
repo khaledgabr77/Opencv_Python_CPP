@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named video
+
+# Build rule for target.
+video: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 video
+.PHONY : video
+
+# fast build rule for target.
+video/fast:
+	$(MAKE) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/build
+.PHONY : video/fast
+
+#=============================================================================
 # Target rules for targets named image
 
 # Build rule for target.
@@ -163,6 +176,33 @@ imae.cpp.s:
 	$(MAKE) -f CMakeFiles/image.dir/build.make CMakeFiles/image.dir/imae.cpp.s
 .PHONY : imae.cpp.s
 
+video.o: video.cpp.o
+
+.PHONY : video.o
+
+# target to build an object file
+video.cpp.o:
+	$(MAKE) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.o
+.PHONY : video.cpp.o
+
+video.i: video.cpp.i
+
+.PHONY : video.i
+
+# target to preprocess a source file
+video.cpp.i:
+	$(MAKE) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.i
+.PHONY : video.cpp.i
+
+video.s: video.cpp.s
+
+.PHONY : video.s
+
+# target to generate assembly for a file
+video.cpp.s:
+	$(MAKE) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.s
+.PHONY : video.cpp.s
+
 window.o: window.cpp.o
 
 .PHONY : window.o
@@ -198,11 +238,15 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... video"
 	@echo "... image"
 	@echo "... DisplayImage"
 	@echo "... imae.o"
 	@echo "... imae.i"
 	@echo "... imae.s"
+	@echo "... video.o"
+	@echo "... video.i"
+	@echo "... video.s"
 	@echo "... window.o"
 	@echo "... window.i"
 	@echo "... window.s"
